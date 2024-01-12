@@ -1,6 +1,5 @@
 "use client";
 
-import axios from "axios";
 import { Copy, Edit, MoreHorizontal, Trash } from "lucide-react";
 import { useParams, useRouter } from "next/navigation";
 import { useState } from "react";
@@ -17,6 +16,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 import { ProductColumn } from "./columns";
+import axios from "axios";
 
 interface CellActionProps {
   data: ProductColumn;
