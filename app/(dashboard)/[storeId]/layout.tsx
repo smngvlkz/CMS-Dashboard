@@ -1,34 +1,37 @@
-import { ClerkProvider } from "@clerk/nextjs";
-import { Inter } from "next/font/google";
+import { redirect } from 'next/navigation';
+import { auth } from '@clerk/nextjs';
 
-import { ModalProvider } from "@/providers/modal-provider";
+import Navbar from '@/components/navbar'
+import prismadb from '@/lib/prismadb';
 
-import { ThemeProvider } from "@/providers/theme-providers";
-import { ToasterProvider } from "@/providers/toast-providers";
-
-const inter = Inter({ subsets: ["latin"] });
-
-export const metadata = {
-  title: "Dashboard",
-  description: "E-Commerce Dashboard",
-};
-
-export default async function RootLayout({
+export default async function DashboardLayout({
   children,
+  params
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
+  params: { storeId: string }
 }) {
+  const { userId } = auth();
+
+  if (!userId) {
+    redirect('/sign-in');
+  }
+
+  const store = await prismadb.store.findFirst({ 
+    where: {
+      id: params.storeId,
+      userId,
+    }
+   });
+
+  if (!store) {
+    redirect('/');
+  };
+
   return (
-    <ClerkProvider>
-      <html lang="en">
-        <body className={inter.className}>
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            <ToasterProvider />
-            <ModalProvider />
-            {children}
-          </ThemeProvider>
-        </body>
-      </html>
-    </ClerkProvider>
+    <>
+      <Navbar />
+      {children}
+    </>
   );
-}
+};
