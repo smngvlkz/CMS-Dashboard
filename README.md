@@ -1,6 +1,6 @@
 ## Technical Achievements
 
-This project showcases my ability to create a web application that helps online store owners manage their content. To build the frontend of the app, I used Next.js. I also leveraged TypeScript, a superset of JavaScript that adds static type checking, to ensure code quality and reliability. The interactive and dynamic components of the app were built using React. For efficient web design, I styled the app with Tailwind. To connect and interact with MySQL, I used Prisma, to simplify database management. Using Prisma, I modeled, migrated, and manipulated the data for the online store. Finally, I deployed the app on Vercel.
+This project showcases my ability to create a web application that helps online store owners manage their content. To build the frontend of the app, I used Next.js. I also leveraged TypeScript, a superset of JavaScript that adds static type checking, to ensure code quality and reliability. The interactive and dynamic components of the app were built using React. For efficient web design, I styled the app with Tailwind.I also used Shadcn-ui, a collection of beautifully designed components that I copied and pasted into my app. I used Shadcn-ui’s CLI to download the components and customize them to match my branding. To connect and interact with MySQL, I used Prisma, to simplify database management. Using Prisma, I modeled, migrated, and manipulated the data for the online store. Finally, I deployed the app on Vercel.
 
 ## Technical Challanges
 
