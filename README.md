@@ -14,6 +14,9 @@ I had to create a dashboard that would display the key metrics and insights of t
 
 I used Clerk, a platform that provides various authentication methods, such as passwords, email codes, OAuth, and more. I also used Clerk’s prebuilt UI components, such as sign-in, sign-up, and user profile, that can be customized and themed to match my branding. I integrated Clerk with Next.js using Clerk’s SDK and React hooks.
 
+## Uploading Images
+I used Cloudinary, a platform that lets me store, transform, optimize, and deliver my media assets. I also used it's optimization and transformation features to enhance the user experience and performance of the app.
+
 ## Demo and Screenshots
 Here are some screenshots and snippet fo the app:
 
